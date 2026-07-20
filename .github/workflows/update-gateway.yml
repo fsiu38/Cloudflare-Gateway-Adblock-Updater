@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          ref: personal
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -40,5 +40,5 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CHECK_VERSIONS: 'true'
-          FRESH_START: 'false'
+          FRESH_START: 'true'
         run: python update_gateway.py
